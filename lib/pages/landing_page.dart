@@ -9,7 +9,9 @@ class LandingPage extends StatefulWidget{
 
 }
 class LandingPageState extends State<LandingPage>{
-  String Telugutext="";
+  String Telugutext="2002 లో పాలక భారతీయ జనతా పార్టీ మరియు అప్పటి ప్రతిపక్షమైన ఇండియన్ నేషనల్ కాంగ్రెస్ మద్దతుతో కలాం భారతదేశంలో 11 వ రాష్ట్రపతిగా ఎన్నికయ్యారు.";
+
+  var usernameController;
   @override
   Widget build(BuildContext context) {
     bool isSwitched = true;
@@ -37,17 +39,22 @@ class LandingPageState extends State<LandingPage>{
                     ),
                     new Divider(color:Colors.black,indent:15.0),
                     new ListTile(
-                      title: new Text("2002 లో పాలక భారతీయ జనతా పార్టీ మరియు అప్పటి ప్రతిపక్షమైన ఇండియన్ నేషనల్ కాంగ్రెస్ మద్దతుతో కలాం భారతదేశంలో 11 వ రాష్ట్రపతిగా ఎన్నికయ్యారు.", style: new TextStyle(color: Colors.deepPurpleAccent,fontSize: 14.0,fontWeight: FontWeight.bold),),
+                      title: new Text(Telugutext, style: new TextStyle(color: Colors.deepPurpleAccent,fontSize: 14.0,fontWeight: FontWeight.bold),),
                     ),
                     new ButtonTheme.bar(
                       child: new ButtonBar(
                         alignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          IconButton(icon: new Icon(Icons.edit),onPressed: null,color: Colors.black),
+                          IconButton(icon: new Icon(Icons.edit),
+                              onPressed: (){
+                                setState(() {
+                                  usernameController = TextEditingController(text: Telugutext);
+                                });
+                              },
+                              color: Colors.black),
                           IconButton(icon: new Icon(Icons.check),
                             onPressed: (){
                             setState((){
-
                             });
                             },
                             color: Colors.green,)
@@ -58,11 +65,18 @@ class LandingPageState extends State<LandingPage>{
                 ),
               ),
             ),
-
             new TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
+              autofocus: true,
+              controller: usernameController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'please edit',
+                border: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(
+                    const Radius.circular(10.0),
+                  ),
+                ),
+                filled: true,
               ),
               style: new TextStyle(fontSize: 20.0),
             ),
@@ -78,4 +92,11 @@ class LandingPageState extends State<LandingPage>{
   void something(bool e){
 
   }
+//  class Editing extends StatefulWidget{
+//    @override
+//    EditingState createState() => new EditingState();
+//  // TODO: implement createState
+//    return LandingPageState();
+//
+//  }
 }
