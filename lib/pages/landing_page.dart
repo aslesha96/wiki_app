@@ -23,6 +23,7 @@ class LandingPageState extends State<LandingPage>{
           children: <Widget>[
             new Material(
               child: new Center(
+                child: SingleChildScrollView(
                 child: new Column(
                   children: <Widget>[
                     new ButtonTheme.bar(
@@ -40,31 +41,40 @@ class LandingPageState extends State<LandingPage>{
                     new Divider(color:Colors.black,indent:15.0),
                     new ListTile(
                       title: new Text(Telugutext, style: new TextStyle(color: Colors.deepPurpleAccent,fontSize: 14.0,fontWeight: FontWeight.bold),),
+                      trailing: IconButton(icon: new Icon(Icons.edit),
+                          onPressed: (){
+                            setState(() {
+                              usernameController = TextEditingController(text: Telugutext);
+                            });
+                          },
+                          color: Colors.black),
                     ),
                     new ButtonTheme.bar(
                       child: new ButtonBar(
                         alignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          IconButton(icon: new Icon(Icons.edit),
-                              onPressed: (){
-                                setState(() {
-                                  usernameController = TextEditingController(text: Telugutext);
-                                });
-                              },
-                              color: Colors.black),
-                          IconButton(icon: new Icon(Icons.check),
-                            onPressed: (){
-                            setState((){
-                            });
-                            },
-                            color: Colors.green,)
+//                          IconButton(icon: new Icon(Icons.edit),
+//                              onPressed: (){
+//                                setState(() {
+//                                  usernameController = TextEditingController(text: Telugutext);
+//                                });
+//                              },
+//                              color: Colors.black),
+//                          IconButton(icon: new Icon(Icons.check),
+//                            onPressed: (){
+//                            setState((){
+//                            });
+//                            },
+//                            color: Colors.green,)
                         ],
                       ),
                     ),
                   ],
                 ),
+                ),
               ),
             ),
+
             new TextField(
               keyboardType: TextInputType.multiline,
               maxLines: null,
@@ -80,7 +90,7 @@ class LandingPageState extends State<LandingPage>{
               ),
               style: new TextStyle(fontSize: 20.0),
             ),
-            IconButton(icon: new Icon(Icons.check_circle),onPressed: null,color: Colors.green,),
+            IconButton(icon: new Icon(Icons.done),onPressed: null,color: Colors.green,),
 
 
           ],
