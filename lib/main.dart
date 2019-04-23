@@ -7,7 +7,9 @@ import './pages/landing_page.dart';
 
 void main(){
   runApp(new MaterialApp(
-    home: new LandingPage(),
+    title: "variable app",
+    home: LandingPage(),
   ));
+
 }
 

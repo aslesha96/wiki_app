@@ -17,16 +17,17 @@ class LandingPageState extends State<LandingPage>{
     bool isSwitched = true;
     // TODO: implement build
     return MaterialApp(
-//      resizeToAvoidBottomPadding: false,
       home: Scaffold(
+        resizeToAvoidBottomPadding: false,
         appBar: AppBar(
-          actions:[
-            new IconButton(icon: new Icon(Icons.arrow_forward_ios),onPressed: null,color: Colors.black),
-            new IconButton(icon: new Icon(Icons.arrow_back_ios),onPressed: null,color: Colors.black,),
-          ]
+            leading: IconButton(icon: new Icon(Icons.arrow_back_ios),onPressed: null,color: Colors.black,),
+            actions: [
+//              new IconButton(icon: new Icon(Icons.arrow_back_ios),onPressed: null,color: Colors.black,),
+              new IconButton(icon: new Icon(Icons.arrow_forward_ios),onPressed: null,color: Colors.black,),
+            ]
         ),
         body: Container(
-            child: SingleChildScrollView(
+            child:SingleChildScrollView(
               child: new Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -35,30 +36,28 @@ class LandingPageState extends State<LandingPage>{
                       child: SingleChildScrollView(
                         child: new Column(
                           children: <Widget>[
-//                            new ButtonTheme.bar(
-//                              child: new ButtonBar(
-//                                alignment: MainAxisAlignment.spaceBetween,
-//                                children: <Widget>[
-//                                  IconButton(icon: new Icon(Icons.arrow_back_ios),onPressed: null,color: Colors.black,),
-//                                  IconButton(icon: new Icon(Icons.arrow_forward_ios),onPressed: null,color: Colors.black),
-//                                ],
-//                              ),
+//                          new ButtonTheme.bar(
+//                            child: new ButtonBar(
+//                              alignment: MainAxisAlignment.spaceBetween,
+//                              children: <Widget>[
+//                                IconButton(icon: new Icon(Icons.arrow_back_ios),onPressed: null,color: Colors.black,),
+//                                IconButton(icon: new Icon(Icons.arrow_forward_ios),onPressed: null,color: Colors.black),
+//                              ],
 //                            ),
+//                          ),
                             new ListTile(
-                              title: new Text("Kalam was elected as the 11th President of India in 2002 with the support of both the ruling Bharatiya Janata Party and the then-opposition Indian National Congress.", style: new TextStyle( fontSize: 14.0)),
+                              title: new Text("Kalam was elected as the 11th President of India in 2002 with the support of both the ruling Bharatiya Janata Party and the then-opposition Indian National Congress.", style: new TextStyle(fontSize: 12.0)),
                             ),
                             new Divider(color:Colors.black,indent:15.0),
                             new ListTile(
-                              title: new Text(Telugutext, style: new TextStyle(fontSize: 14.0),),
+                              title: new Text(Telugutext, style: new TextStyle(fontSize: 12.0),),
                               trailing: IconButton(icon: new Icon(Icons.edit),
-                                onPressed: (){
-                                  setState(() {
-                                    usernameController = TextEditingController(text: Telugutext);
-                                  });
-                                },
-                                color: Colors.black,
-                              ),
-
+                                  onPressed: (){
+                                    setState(() {
+                                      usernameController = TextEditingController(text: Telugutext);
+                                    });
+                                  },
+                                  color: Colors.black),
                             ),
                             new ButtonTheme.bar(
                               child: new ButtonBar(
@@ -99,7 +98,7 @@ class LandingPageState extends State<LandingPage>{
                       ),
                       filled: true,
                     ),
-                    style: new TextStyle(fontSize: 14.0),
+                    style: new TextStyle(fontSize: 12.0),
                   ),
                   IconButton(icon: new Icon(Icons.done),onPressed: null,color: Colors.green,),
 
@@ -110,16 +109,5 @@ class LandingPageState extends State<LandingPage>{
         ),
       ),
     );
-
   }
-  void something(bool e){
-
-  }
-//  class Editing extends StatefulWidget{
-//    @override
-//    EditingState createState() => new EditingState();
-//  // TODO: implement createState
-//    return LandingPageState();
-//
-//  }
 }
