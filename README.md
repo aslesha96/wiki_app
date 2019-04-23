@@ -1,4 +1,4 @@
-# quiz
+# Telugu Wiki Translation Using Flutter
 
 A new Flutter project.
 
