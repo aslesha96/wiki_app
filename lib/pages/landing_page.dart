@@ -44,7 +44,13 @@ class LandingPageState extends State<LandingPage>{
                         alignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           IconButton(icon: new Icon(Icons.edit),onPressed: null,color: Colors.black),
-                          IconButton(icon: new Icon(Icons.check),onPressed: null,color: Colors.green,)
+                          IconButton(icon: new Icon(Icons.check),
+                            onPressed: (){
+                            setState((){
+
+                            });
+                            },
+                            color: Colors.green,)
                         ],
                       ),
                     ),
@@ -60,6 +66,8 @@ class LandingPageState extends State<LandingPage>{
               ),
               style: new TextStyle(fontSize: 20.0),
             ),
+            IconButton(icon: new Icon(Icons.check_circle),onPressed: null,color: Colors.green,),
+
 
           ],
         ),
