@@ -37,11 +37,11 @@ class LandingPageState extends State<LandingPage>{
                         child: new Column(
                           children: <Widget>[
                             new ListTile(
-                              title: new Text("Kalam was elected as the 11th President of India in 2002 with the support of both the ruling Bharatiya Janata Party and the then-opposition Indian National Congress.", style: new TextStyle(fontSize: 12.0)),
+                              title: new Text("Kalam was elected as the 11th President of India in 2002 with the support of both the ruling Bharatiya Janata Party and the then-opposition Indian National Congress.", style: new TextStyle(fontSize: 14.0)),
                             ),
                             new Divider(color:Colors.black,indent:15.0),
                             new ListTile(
-                              title: new Text(Telugutext, style: new TextStyle(fontSize: 12.0),),
+                              title: new Text(Telugutext, style: new TextStyle(fontSize: 14.0),),
                               trailing: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
@@ -58,21 +58,7 @@ class LandingPageState extends State<LandingPage>{
                             new ButtonTheme.bar(
                               child: new ButtonBar(
                                 alignment: MainAxisAlignment.spaceAround,
-                                children: <Widget>[
-//                          IconButton(icon: new Icon(Icons.edit),
-//                              onPressed: (){
-//                                setState(() {
-//                                  usernameController = TextEditingController(text: Telugutext);
-//                                });
-//                              },
-//                              color: Colors.black),
-//                          IconButton(icon: new Icon(Icons.check),
-//                            onPressed: (){
-//                            setState((){
-//                            });
-//                            },
-//                            color: Colors.green,)
-                                ],
+
                               ),
                             ),
                           ],
@@ -93,7 +79,7 @@ class LandingPageState extends State<LandingPage>{
                       ),
                       filled: true,
                     ),
-                    style: new TextStyle(fontSize: 12.0),
+                    style: new TextStyle(fontSize: 14.0),
                   ),
                   IconButton(icon: new Icon(Icons.done),onPressed: null,color: Colors.green,),
                 ],
