@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 class LandingPage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -10,7 +10,15 @@ class LandingPage extends StatefulWidget{
 }
 class LandingPageState extends State<LandingPage>{
   String Telugutext="2002 లో పాలక భారతీయ జనతా పార్టీ మరియు అప్పటి ప్రతిపక్షమైన ఇండియన్ నేషనల్ కాంగ్రెస్ మద్దతుతో కలాం భారతదేశంలో 11 వ రాష్ట్రపతిగా ఎన్నికయ్యారు.";
-
+  @override
+  void initState() {
+    Firestore.instance
+        .collection('translations')
+        .document('wiki translation')
+        .setData({'title':'wiki trans','type':'translator'});
+      // use ds as a snapshot
+    super.initState();
+  }
   var usernameController;
   @override
   Widget build(BuildContext context) {
